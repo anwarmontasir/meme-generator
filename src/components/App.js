@@ -3,8 +3,8 @@ import faker from 'faker';
 import cowsay from 'cowsay-browser';
 import dom2image from 'dom-to-image';
 import fileSaver from 'file-saver';
-import './App.css';
+import './app.css';
 
 export default class App extends Component {
-    
+
 }
