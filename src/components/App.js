@@ -71,47 +71,51 @@ export default class App extends Component {
     });
 
     return (
-      <div className="App">
+      <div className="app">
           
         <header>
           <h1 className="App-title">Generate Cowsay Lorem</h1>
         </header>
 
-        <p>
-          <label>
+        <main>
+
+          <p>
+            <label>
             Choose a Cow:
-            <select onChange={this.setCow}>
-              <option value="">choose a cow</option>
-              {cows.map((cow, index) => (
-                <option value={cow} key={index}>{cow}</option>
-              ))}
-            </select>
-          </label>
+              <select onChange={this.handleCowChange}>
+                <option value="">choose a cow</option>
+                {cows.map((cow, index) => (
+                  <option value={cow} key={index}>{cow}</option>
+                ))}
+              </select>
+            </label>
 
-          <label>
+            <label>
             Fake Ipsum: <button onClick={this.handleFakeData}>Generate</button>
-          </label>
+            </label>
 
-          <label>
+            <label>
             Background:
-            <input name="url" onChange={this.handleBackground} />
-            <input name="file" onChange={this.handleUpload} />
-          </label>
-        </p>
+              <input name="url" onChange={this.handleBackground} />
+              <input name="file" onChange={this.handleUpload} />
+            </label>
+          </p>
 
-        <section 
-          className="ipsum"
-          ref={node => this.section = node}
-          style={{
-            backgroundImage: background ? `url(${background})` : null
-          }}
-        >
-          <pre>{cowSaid}</pre>
-        </section>
+          <section 
+            className="ipsum"
+            ref={node => this.section = node}
+            style={{
+              backgroundImage: background ? `url(${background})` : null
+            }}
+          >
+            <pre>{cowSaid}</pre>
+          </section>
 
-        <section>
-          <button onClick={this.handleExport}>Export</button>
-        </section>
+          <section>
+            <button onClick={this.handleExport}>Export</button>
+          </section>
+
+        </main>
 
         <footer><small>&copy; 2018 this site</small></footer>
 
